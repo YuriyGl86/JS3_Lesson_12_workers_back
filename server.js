@@ -1,7 +1,7 @@
 const http = require('http');
 const Koa = require('koa');
 const koaBody = require('koa-body').default;
-var slow = require('koa-slow');
+const slow = require('koa-slow');
 
 const router = require('./routes');
 
@@ -46,8 +46,8 @@ app.use(async (ctx, next) => { // eslint-disable-line consistent-return
 
 app.use(slow({
   url: /\/api\/news\//i,
-  delay: 4000
-}))
+  delay: 4000,
+}));
 
 // TODO: write code here
 
